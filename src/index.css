@@ -51,7 +51,7 @@ body {
   border-bottom-left-radius: 3px;
   appearance: none;
   outline: 0;
-  border: 1px solid var(--c-gray-500);
+  border: 1px solid var(--c-gray-400);
   color: var(--c-gray-800);
 }
 
@@ -60,13 +60,20 @@ body {
 }
 
 .TodoInput button {
+  cursor: pointer;
   padding: 8px 12px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  color: var(--c-gray-800);
-  background-color: var(--c-gray-500);
-  border: 1px solid var(--c-gray-500);
+  color: var(--c-gray-600);
+  background-color: var(--c-gray-400);
+  border: 1px solid var(--c-gray-400);
   border-left: none;
+}
+
+.TodoInput button[disabled] {
+  background-color: var(--c-gray-200);
+  color: var(--c-gray-400);
+  cursor: not-allowed;
 }
 
 .TodoInput__error {

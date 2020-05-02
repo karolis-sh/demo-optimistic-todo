@@ -1,3 +1,7 @@
+const random = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
 const delay = (fn) => (...args) =>
   new Promise((resolve, reject) =>
     setTimeout(() => {
@@ -6,7 +10,7 @@ const delay = (fn) => (...args) =>
       } catch (err) {
         reject(err);
       }
-    }, 700)
+    }, random(1000, 2000))
   );
 
 let seq = 0;
