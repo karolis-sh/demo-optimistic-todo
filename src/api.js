@@ -29,7 +29,7 @@ export default {
     if (todo) {
       throw new Error('Todo already in list');
     } else {
-      todos.push({ id: id(), title });
+      todos.push({ id: id(), title, completed: false });
     }
   }),
   toggleTodo: delay((id) => {
