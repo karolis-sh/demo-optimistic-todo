@@ -1,11 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "normalize.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'normalize.css';
 
-import App from "./App";
-import "./index.css";
+import App from './App';
+import './index.css';
 
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 ReactDOM.render(
   <React.StrictMode>
     <App />

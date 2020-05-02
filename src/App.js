@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import api from "./api";
-import TodoInput from "./TodoInput";
-import TodoList from "./TodoList";
+import api from './api';
+import TodoInput from './TodoInput';
+import TodoList from './TodoList';
 
 export default function App() {
   const [shouldFetch, setShouldFetch] = useState(true);
@@ -44,7 +44,7 @@ export default function App() {
 
   return (
     <div className="TodoApp">
-      <h1>Todos {(isFetching || isAdding || isToggling) && "..."}</h1>
+      <h1>Todos {(isFetching || isAdding || isToggling) && '...'}</h1>
       <TodoInput addTodo={addTodo} />
       <TodoList todos={todos} onToggle={onToggle} />
     </div>

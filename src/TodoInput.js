@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 export default function TodoInput({ addTodo }) {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const [error, setError] = useState();
 
   const onSubmit = async e => {
@@ -9,9 +9,10 @@ export default function TodoInput({ addTodo }) {
     e.persist();
 
     setError();
+    if (!text) return;
     try {
       await addTodo(text);
-      setText("");
+      setText('');
     } catch (err) {
       setError(err.message);
     }
@@ -20,11 +21,7 @@ export default function TodoInput({ addTodo }) {
   return (
     <form className="TodoInput" onSubmit={onSubmit}>
       <div>
-        <input
-          placeholder="New todo"
-          value={text}
-          onChange={e => setText(e.target.value)}
-        />
+        <input placeholder="New todo" value={text} onChange={e => setText(e.target.value)} />
         <button type="submit">ADD</button>
       </div>
       {error && <p className="TodoInput__error">{error}</p>}
