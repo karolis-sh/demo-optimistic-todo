@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import api from './api';
 import TodoInput from './TodoInput';
 import TodoList from './TodoList';
+import Loader from './Loader';
 
 export default function App() {
   const [shouldFetch, setShouldFetch] = useState(true);
@@ -16,8 +17,8 @@ export default function App() {
       setIsFetching(true);
       api.getTodos().then((result) => {
         setTodos(result);
-        setIsFetching(false);
         setShouldFetch(false);
+        setIsFetching(false);
       });
     }
   }, [shouldFetch, isFetching, isAdding, isToggling]);
@@ -44,7 +45,7 @@ export default function App() {
 
   return (
     <div className="TodoApp">
-      <h1>Todos {(isFetching || isAdding || isToggling) && '...'}</h1>
+      <h1>Todos {(isFetching || isAdding || isToggling) && <Loader />}</h1>
       <TodoInput addTodo={addTodo} />
       <TodoList todos={todos} onToggle={onToggle} />
     </div>

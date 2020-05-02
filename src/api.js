@@ -10,7 +10,7 @@ const delay = (fn) => (...args) =>
       } catch (err) {
         reject(err);
       }
-    }, random(1000, 2000))
+    }, random(600, 1800))
   );
 
 let seq = 0;
