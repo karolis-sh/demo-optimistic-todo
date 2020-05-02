@@ -5,7 +5,7 @@ import TodoItem from './TodoItem';
 export default function TodoList({ todos, onToggle }) {
   return (
     <ul className="TodoList">
-      {todos.map(todo => (
+      {todos.map((todo) => (
         <TodoItem key={todo.id} onToggle={() => onToggle(todo.id)} {...todo} />
       ))}
     </ul>

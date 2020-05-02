@@ -14,7 +14,7 @@ export default function App() {
   useEffect(() => {
     if (shouldFetch && !isFetching && !isAdding && !isToggling) {
       setIsFetching(true);
-      api.getTodos().then(result => {
+      api.getTodos().then((result) => {
         setTodos(result);
         setIsFetching(false);
         setShouldFetch(false);
@@ -22,7 +22,7 @@ export default function App() {
     }
   }, [shouldFetch, isFetching, isAdding, isToggling]);
 
-  const addTodo = async title => {
+  const addTodo = async (title) => {
     try {
       setIsAdding(true);
       await api.addTodo(title);
@@ -32,7 +32,7 @@ export default function App() {
     }
   };
 
-  const onToggle = async id => {
+  const onToggle = async (id) => {
     try {
       setIsToggling(true);
       await api.toggleTodo(id);

@@ -1,4 +1,4 @@
-const delay = fn => (...args) =>
+const delay = (fn) => (...args) =>
   new Promise((resolve, reject) =>
     setTimeout(() => {
       try {
@@ -20,16 +20,16 @@ const todos = [
 
 export default {
   getTodos: delay(() => todos),
-  addTodo: delay(title => {
-    const todo = todos.find(item => item.title.toLowerCase() === title.toLowerCase());
+  addTodo: delay((title) => {
+    const todo = todos.find((item) => item.title.toLowerCase() === title.toLowerCase());
     if (todo) {
       throw new Error('Todo already in list');
     } else {
       todos.push({ id: id(), title });
     }
   }),
-  toggleTodo: delay(id => {
-    const todo = todos.find(item => item.id === id);
+  toggleTodo: delay((id) => {
+    const todo = todos.find((item) => item.id === id);
     if (todo) {
       todo.completed = !todo.completed;
     } else {

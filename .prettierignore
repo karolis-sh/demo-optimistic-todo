@@ -1,0 +1,12 @@
+*.*
+!*.js
+!*.css
+!*.md
+!*.html
+
+node_modules
+package.json
+package-lock.json
+
+build
+
