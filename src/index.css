@@ -1,0 +1,104 @@
+:root {
+  --c-gray-100: #f7fafc;
+  --c-gray-200: #edf2f7;
+  --c-gray-300: #e2e8f0;
+  --c-gray-400: #cbd5e0;
+  --c-gray-500: #a0aec0;
+  --c-gray-600: #718096;
+  --c-gray-700: #4a5568;
+  --c-gray-800: #2d3748;
+  --c-gray-900: #1a202c;
+}
+
+body {
+  font-family: sans-serif;
+  color: #1a202c;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  background-color: var(--c-gray-200);
+}
+
+.TodoApp {
+  padding: 6px 12px;
+  min-width: 300px;
+  max-width: 500px;
+  margin: auto;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.TodoApp h1 {
+  color: var(--c-gray-700);
+  padding: 0 10px;
+}
+
+.TodoInput {
+  margin-bottom: 10px;
+}
+
+.TodoInput > div {
+  display: flex;
+}
+
+.TodoInput input {
+  flex: 1;
+  padding: 8px 12px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  appearance: none;
+  outline: 0;
+  border: 1px solid var(--c-gray-500);
+  color: var(--c-gray-800);
+}
+
+.TodoInput input::placeholder {
+  color: var(--c-gray-500);
+}
+
+.TodoInput button {
+  padding: 8px 12px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  color: var(--c-gray-800);
+  background-color: var(--c-gray-500);
+  border: 1px solid var(--c-gray-500);
+  border-left: none;
+}
+
+.TodoInput__error {
+  color: red;
+}
+
+.TodoList {
+  margin: 0;
+  padding: 0;
+}
+
+.TodoItem:first-child {
+  border-top: none;
+}
+
+.TodoItem {
+  list-style: none;
+  padding: 12px;
+  border-top: 1px solid var(--c-gray-400);
+  color: var(--c-gray-700);
+}
+
+.TodoItem label {
+  display: flex;
+}
+
+.TodoItem input {
+  margin-right: 10px;
+}
+
+.TodoItem--completed {
+  text-decoration: line-through;
+  color: var(--c-gray-500);
+}
